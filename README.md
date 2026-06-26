@@ -1,5 +1,7 @@
 # 🌐 Automated Static Website Hosting on AWS S3 using Terraform & GitHub Actions
 
+![Architecture Diagram](diagram.png)
+
 This repository contains an automated DevOps pipeline to deploy a static HTML website to AWS S3. It utilizes **Terraform** for Infrastructure as Code (IaC) and **GitHub Actions** for Continuous Integration and Continuous Deployment (CI/CD).
 
 ---

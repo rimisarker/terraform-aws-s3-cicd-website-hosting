@@ -1,0 +1,28 @@
+name: Deploy Website to AWS S3
+
+on:
+  push:
+    branches:
+      - main # Triggers the workflow whenever code is pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code from the GitHub repository
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      # 2. Configure AWS CLI using credentials from GitHub Secrets
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2 # Your AWS Region (e.g., Oregon)
+
+      # 3. Sync project files with the AWS S3 bucket
+      - name: Deploy and Sync Files to S3
+        run: |
+          aws s3 sync . s3://my-unique-nature-gallery-2026 --delete --exclude ".git*" --exclude ".terraform*" --exclude "*.tf"

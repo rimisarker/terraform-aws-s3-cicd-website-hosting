@@ -26,6 +26,7 @@
             text-align: center;
             padding: 50px 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         header h1 {
@@ -36,6 +37,21 @@
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        /* Live Practice Badge */
+        .demo-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
         }
 
         /* Main Container */
@@ -115,6 +131,8 @@
     <header>
         <h1>Canvas of Nature</h1>
         <p>A beautiful collection of beautiful places, amazing animals, and colorful flowers</p>
+        <!-- আমরা এই ছোট্ট ডেমো ব্যাজটি ভিডিওর জন্য অ্যাড করলাম -->
+        <div class="demo-badge">🟢 Live Demo (Practice Mode)</div>
     </header>
 
     <div class="container">
